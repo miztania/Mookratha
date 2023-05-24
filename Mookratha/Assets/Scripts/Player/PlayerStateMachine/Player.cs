@@ -17,6 +17,10 @@ public class Player : MonoBehaviour
 
     public bool isDashing { get; private set; }
 
+    public GameObject item;
+    public Rigidbody itemRigibody;
+    public GameObject holdPosition;
+
     [SerializeField]
     private PlayerData playerData;
 
@@ -64,12 +68,32 @@ public class Player : MonoBehaviour
 
     public void SetIsDash(bool b) => isDashing = b;
 
-     void OnTriggerEnter(Collider other)
+
+    public void OnCollisionEnter(Collision collision)
     {
-        if(other.gameObject.tag == "player")
+       
+
+        if (collision.gameObject.tag == "food")
         {
-            Debug.Log("Hit player");
+            Debug.Log("Hit Food");
+            item = collision.gameObject;
+            itemRigibody = collision.rigidbody;
+            PickUp();
         }
     }
+
+    public void PickUp()
+    {
+
+       // item.transform.localPosition = Vector3.MoveTowards(item.transform.position, holdPosition.transform.position, 0.1f);
+      // item.transform.position = holdPosition.transform.position;
+        //item.transform.localRotation = holdPosition.transform.localRotation;
+        item.transform.position += new Vector3(0,0.8f, 0);
+     
+        item.transform.parent = this.transform;
+        Destroy(itemRigibody);
+      
+    }
+
 
 }

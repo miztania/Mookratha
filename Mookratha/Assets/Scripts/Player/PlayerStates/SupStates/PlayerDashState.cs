@@ -50,7 +50,7 @@ public class PlayerDashState : PlayerAblilityState
 
         if(Time.time <= startTime + playerData.dashTime) 
         {
-            Debug.Log("Dassssssssssssssssssh");
+          //  Debug.Log("Dassssssssssssssssssh");
         }
         else
         {
