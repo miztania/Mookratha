@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class Player : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Player : MonoBehaviour
     public PlayerMoveState MoveState { get; private set; }  
     public PlayerDashState DashState { get; private set; }
     public PlayerHoldingState HoldingState { get; private set; }
+    public PlayerHoldStillState HoldStillState { get; private set; }
+    public PlayerThrowState ThrowState { get; private set; }
 
 
     public Animator Anim { get; private set; }
@@ -19,6 +22,8 @@ public class Player : MonoBehaviour
     public bool isDashing { get; private set; }
     public bool isCanHold { get; private set; }
     public bool isHolding { get; private set; }
+    public bool isCanThrow { get; private set; }
+    public Vector3 facingDirection;
 
     public GameObject item;
     public Rigidbody itemRigibody;
@@ -28,6 +33,7 @@ public class Player : MonoBehaviour
     private PlayerData playerData;
 
     private Vector3 workSpace;
+    
 
 
     private void Awake()
@@ -38,6 +44,8 @@ public class Player : MonoBehaviour
         MoveState = new PlayerMoveState(this, StateMachine, playerData, "move");
         DashState = new PlayerDashState(this, StateMachine, playerData, "dash");
         HoldingState = new PlayerHoldingState(this, StateMachine, playerData, "hold");
+        HoldStillState = new PlayerHoldStillState(this, StateMachine, playerData, "holdStill");
+        ThrowState = new PlayerThrowState(this, StateMachine, playerData, "throw");
     }
 
     private void Start()
@@ -48,6 +56,7 @@ public class Player : MonoBehaviour
 
         isCanHold = false;
         isHolding = false;
+        isCanThrow= false;
 
         StateMachine.Initialize(IdleState);
     }
@@ -57,9 +66,15 @@ public class Player : MonoBehaviour
         
        
         StateMachine.CurrentState.LogicUpdate();
+        CheckFacingDirection();
+        /*
+        if(Input.GetKeyDown(KeyCode.Space)) 
+        {
+            Throw();
+        }
+        */
 
-       
-       
+
 
     }
 
@@ -75,6 +90,7 @@ public class Player : MonoBehaviour
     }
 
     public void SetIsDash(bool b) => isDashing = b;
+    public void SetIsCanThrow(bool b) => isCanThrow = b;
 
 
 
@@ -93,17 +109,21 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    public void OnCollisionExit(Collision collision)
     {
-
         if (collision.gameObject.tag == "food")
         {
-         
+            item = null;
+            itemRigibody = null;
             isCanHold = false;
 
             // PickUp();
         }
     }
+
+
+
+
 
 
     public void PickUp()
@@ -114,8 +134,7 @@ public class Player : MonoBehaviour
             item.transform.SetParent(this.transform);
 
 
-
-            Destroy(itemRigibody);
+           Destroy(itemRigibody);
         }
         // item.transform.localPosition = Vector3.MoveTowards(item.transform.position, holdPosition.transform.position, 0.1f);
         // item.transform.position = holdPosition.transform.position;
@@ -126,5 +145,38 @@ public class Player : MonoBehaviour
 
     public void SetIsHolding(bool b) => isHolding = b;
 
+    public void Throw()
+    {
+       
+        itemRigibody = item.AddComponent<Rigidbody>();
+      
+        itemRigibody.AddForce(playerData.throwForceXZ*facingDirection.x,playerData.throwForceY, playerData.throwForceXZ* facingDirection.z);
+ 
+        item.transform.parent = null;
+        itemRigibody.mass = 1000;
+        isHolding = false;
+        SetIsCanThrow(false);
+    }
+
+
+    public void CheckFacingDirection()
+    {
+        if (InputHandler.NormInputX == 1)
+        {
+            facingDirection.x = 1;
+        }
+        else if(InputHandler.NormInputX == -1)
+        {
+            facingDirection.x = -1;
+        }
+        else if (InputHandler.NormInputY == 1)
+        {
+            facingDirection.z = 1;
+        }
+        else if (InputHandler.NormInputY == -1)
+        {
+            facingDirection.z = -1;
+        }
+    }
 
 }

@@ -1,8 +1,8 @@
 {
-    "name": "Player",
+    "name": "Player 1",
     "maps": [
         {
-            "name": "Gameplay",
+            "name": "Player",
             "id": "c9a6370d-6210-4785-8e00-fd8afb67e5c8",
             "actions": [
                 {
@@ -108,6 +108,61 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "2D Vector",
+                    "id": "e860ae1c-a069-4f03-8af9-a578bcd305b3",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "5b241060-92e9-4748-8391-fc286822874a",
+                    "path": "<Joystick>/stick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "f9f5c258-4c5a-4aad-84be-a3d69f81e549",
+                    "path": "<Joystick>/stick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "037cd3e6-83e5-499b-8f3d-ae8779f28705",
+                    "path": "<Joystick>/stick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "50a1d75a-b030-4762-b29b-27d82c3b763d",
+                    "path": "<Joystick>/stick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "1a2166b8-3cce-42e1-8bfa-099fc16a4c54",
                     "path": "<Keyboard>/space",
@@ -120,11 +175,33 @@
                 },
                 {
                     "name": "",
+                    "id": "2799639b-8524-466e-8bd5-ddf998842d6a",
+                    "path": "<HID::Microntek              USB Joystick          >/button2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Catch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "4a75de7b-0ffc-4cb9-a034-0929322b8edf",
                     "path": "<Keyboard>/leftShift",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "25e0625f-f35a-493a-892e-a14096afa755",
+                    "path": "<HID::Microntek              USB Joystick          >/button3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -166,6 +243,17 @@
                 },
                 {
                     "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Gamepad",
+            "bindingGroup": "Gamepad",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
                     "isOptional": false,
                     "isOR": false
                 }

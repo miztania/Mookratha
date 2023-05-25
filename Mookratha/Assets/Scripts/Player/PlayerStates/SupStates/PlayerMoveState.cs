@@ -32,6 +32,10 @@ public class PlayerMoveState : PlayerGroundedState
         {
             stateMachine.ChangeState(player.IdleState);
         }
+        else if (catchInput && !isHolding)
+        {
+            stateMachine.ChangeState(player.HoldingState);
+        }
     }
 
     public override void PhysicsUpdate()

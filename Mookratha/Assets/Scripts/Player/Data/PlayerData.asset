@@ -15,3 +15,7 @@ MonoBehaviour:
   movementSpeed: 5
   dashCoolDown: 2
   dashTime: 1
+  throwForceXZ: 522
+  throwForceY: 100
+  throwTime: 0.5
+  holdBeforeThrow: 0.2

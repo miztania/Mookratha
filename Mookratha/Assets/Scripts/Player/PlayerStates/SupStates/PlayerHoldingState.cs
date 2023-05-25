@@ -25,12 +25,34 @@ public class PlayerHoldingState : PlayerMoveState
     public override void Exit()
     {
         base.Exit();
-        player.SetIsHolding(false);
+      // player.SetIsHolding(false);
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+
+        if (Time.time <= startTime + playerData.holdBeforeThrow)
+        {
+          
+        }
+        else
+        {
+
+            player.SetIsCanThrow(true);
+
+        }
+
+        if ((input.x == 0 && input.y == 0) && isHolding)
+        {
+            stateMachine.ChangeState(player.HoldStillState);
+        }
+        else if(catchInput && player.isCanThrow)
+        {
+            stateMachine.ChangeState(player.ThrowState);
+        }
+    
 
     }
 

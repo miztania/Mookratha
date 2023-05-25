@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerIdleState : PlayerGroundedState
+public class PlayerThrowState : PlayerAblilityState
 {
-    public PlayerIdleState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+    public PlayerThrowState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
     }
 
@@ -16,23 +16,30 @@ public class PlayerIdleState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
-        player.RB.velocity = new Vector3(0.0f, 0.0f,0.0f);
+       
+
     }
 
     public override void Exit()
     {
         base.Exit();
+ 
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
 
-       // Debug.Log("input x : " + input.x + " input y :" + input.y);
 
-        if (input.x != 0f || input.y != 0f)
+        if (Time.time <= startTime + playerData.throwTime)
         {
-            stateMachine.ChangeState(player.MoveState);
+            //  Debug.Log("Dassssssssssssssssssh");
+        }
+        else
+        {
+            player.Throw();
+            isAbilityDone = true;
+       
         }
     }
 

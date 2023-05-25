@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.Windows;
 
-public class PlayerGroundedState : PlayerState
+public class PlayerHoldStillState : PlayerState
 {
 
     protected Vector2 input;
@@ -11,9 +11,8 @@ public class PlayerGroundedState : PlayerState
     protected bool dashInput;
     protected bool catchInput;
     protected bool isHolding;
-    protected bool isMoving;
-
-    public PlayerGroundedState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+    
+    public PlayerHoldStillState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
     }
 
@@ -25,11 +24,16 @@ public class PlayerGroundedState : PlayerState
     public override void Enter()
     {
         base.Enter();
+        player.SetIsHolding(true);
+        player.RB.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+
+    //    player.Throw();
     }
 
     public override void Exit()
     {
         base.Exit();
+       // player.SetIsHolding(false);
     }
 
     public override void LogicUpdate()
@@ -42,37 +46,22 @@ public class PlayerGroundedState : PlayerState
         catchInput = player.InputHandler.JumpInput;
         isHolding = player.isHolding;
 
-        isMoving = (input.x != 0 || input.y != 0);
 
-        if (dashInput && !isHolding)
-        {
-            stateMachine.ChangeState(player.DashState);
-        }
-        else if (player.isCanHold && catchInput)
+        if ((input.x != 0f || input.y != 0f))
         {
             stateMachine.ChangeState(player.HoldingState);
         }
-        else if (isMoving && !isHolding)
+        else if (catchInput && player.isCanThrow)
         {
-            stateMachine.ChangeState(player.MoveState);
+            stateMachine.ChangeState(player.ThrowState);
         }
-       
-      
-       
-
 
 
 
     }
-    
-
-
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-
     }
-
-    
 }

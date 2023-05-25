@@ -12,4 +12,10 @@ public class PlayerData : ScriptableObject
     [Header("Dash State")]
     public float dashCoolDown = 0.2f;
     public float dashTime = 1f;
+
+    [Header("Throw State")]
+    public float throwForceXZ = 522;
+    public float throwForceY = 100f;
+    public float throwTime = 0.2f;
+    public float holdBeforeThrow = 0.5f;
 }
