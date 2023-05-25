@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public PlayerIdleState IdleState { get; private set; }
     public PlayerMoveState MoveState { get; private set; }  
     public PlayerDashState DashState { get; private set; }
+    public PlayerHoldingState HoldingState { get; private set; }
 
 
     public Animator Anim { get; private set; }
@@ -16,6 +17,8 @@ public class Player : MonoBehaviour
     public Rigidbody RB { get;private set; }
 
     public bool isDashing { get; private set; }
+    public bool isCanHold { get; private set; }
+    public bool isHolding { get; private set; }
 
     public GameObject item;
     public Rigidbody itemRigibody;
@@ -34,7 +37,7 @@ public class Player : MonoBehaviour
         IdleState = new PlayerIdleState(this,StateMachine,playerData,"idle");
         MoveState = new PlayerMoveState(this, StateMachine, playerData, "move");
         DashState = new PlayerDashState(this, StateMachine, playerData, "dash");
-
+        HoldingState = new PlayerHoldingState(this, StateMachine, playerData, "hold");
     }
 
     private void Start()
@@ -43,14 +46,19 @@ public class Player : MonoBehaviour
         InputHandler = GetComponent<PlayerInputHandler>();
         RB = GetComponent<Rigidbody>();
 
+        isCanHold = false;
+        isHolding = false;
+
         StateMachine.Initialize(IdleState);
     }
 
     private void Update()
     { 
+        
        
         StateMachine.CurrentState.LogicUpdate();
-     
+
+       
        
 
     }
@@ -69,31 +77,54 @@ public class Player : MonoBehaviour
     public void SetIsDash(bool b) => isDashing = b;
 
 
-    public void OnCollisionEnter(Collision collision)
+
+    public void OnCollisionStay(Collision collision)
     {
        
 
         if (collision.gameObject.tag == "food")
         {
-            Debug.Log("Hit Food");
+           // Debug.Log("Hit Food");
             item = collision.gameObject;
             itemRigibody = collision.rigidbody;
-            PickUp();
+            isCanHold= true;
+            
+           // PickUp();
         }
     }
 
-    public void PickUp()
+    private void OnCollisionExit(Collision collision)
     {
 
-       // item.transform.localPosition = Vector3.MoveTowards(item.transform.position, holdPosition.transform.position, 0.1f);
-      // item.transform.position = holdPosition.transform.position;
+        if (collision.gameObject.tag == "food")
+        {
+         
+            isCanHold = false;
+
+            // PickUp();
+        }
+    }
+
+
+    public void PickUp()
+    {
+        if (!isHolding)
+        {
+            item.transform.position += new Vector3(0, 0.8f, 0);
+            item.transform.SetParent(this.transform);
+
+
+
+            Destroy(itemRigibody);
+        }
+        // item.transform.localPosition = Vector3.MoveTowards(item.transform.position, holdPosition.transform.position, 0.1f);
+        // item.transform.position = holdPosition.transform.position;
         //item.transform.localRotation = holdPosition.transform.localRotation;
-        item.transform.position += new Vector3(0,0.8f, 0);
-     
-        item.transform.parent = this.transform;
-        Destroy(itemRigibody);
+    
       
     }
+
+    public void SetIsHolding(bool b) => isHolding = b;
 
 
 }

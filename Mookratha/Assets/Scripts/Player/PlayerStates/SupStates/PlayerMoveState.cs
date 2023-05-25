@@ -28,7 +28,7 @@ public class PlayerMoveState : PlayerGroundedState
     {
         base.LogicUpdate();
 
-        if(input.x == 0 && input.y == 0)
+        if((input.x == 0 && input.y == 0) && !isHolding)
         {
             stateMachine.ChangeState(player.IdleState);
         }

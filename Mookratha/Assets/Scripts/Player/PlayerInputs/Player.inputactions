@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Jump",
+                    "name": "Catch",
                     "type": "Button",
                     "id": "4e2b6f86-b944-4f27-b62e-e8c1baa4dc08",
                     "expectedControlType": "Button",
@@ -114,14 +114,14 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Jump",
+                    "action": "Catch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "4a75de7b-0ffc-4cb9-a034-0929322b8edf",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/leftShift",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
