@@ -163,6 +163,61 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "2D Vector",
+                    "id": "0e1a5a6c-5830-4a99-b6fd-26218ff6c37d",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "a49b0515-2e3a-4b37-85c4-a7fa194d0fec",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "ba9186fd-89e4-40c9-bb3e-0f3df28ca385",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "43c972ac-0885-434c-be87-c554d354f70d",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "112fbc6a-fbef-44e0-ad3a-877587ff929d",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "1a2166b8-3cce-42e1-8bfa-099fc16a4c54",
                     "path": "<Keyboard>/space",
@@ -250,6 +305,17 @@
                 {
                     "devicePath": "<Keyboard>",
                     "isOptional": true,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Gamepad",
+            "bindingGroup": "Gamepad",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
                     "isOR": false
                 }
             ]
