@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using static UnityEditor.Progress;
 
 public class Player : MonoBehaviour
@@ -29,7 +28,7 @@ public class Player : MonoBehaviour
     public GameObject item;
     public Rigidbody itemRigibody;
     public GameObject holdPosition;
-    public GameObject playerPrefab;
+
     [SerializeField]
     private PlayerData playerData;
 
@@ -58,11 +57,6 @@ public class Player : MonoBehaviour
         isCanHold = false;
         isHolding = false;
         isCanThrow= false;
-
-       
-
-
-
 
         StateMachine.Initialize(IdleState);
     }
