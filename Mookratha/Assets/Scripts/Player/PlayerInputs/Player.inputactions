@@ -1,5 +1,5 @@
 {
-    "name": "Player 1",
+    "name": "Player",
     "maps": [
         {
             "name": "Player",
@@ -109,7 +109,7 @@
                 },
                 {
                     "name": "2D Vector",
-                    "id": "e860ae1c-a069-4f03-8af9-a578bcd305b3",
+                    "id": "ad881346-d7f9-4b1f-8a26-e1aebf000c4e",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -120,44 +120,44 @@
                 },
                 {
                     "name": "up",
-                    "id": "5b241060-92e9-4748-8391-fc286822874a",
-                    "path": "<Joystick>/stick/down",
+                    "id": "7c37e203-c49f-4538-bbe6-f20fa8153957",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Keyboard2",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "down",
-                    "id": "f9f5c258-4c5a-4aad-84be-a3d69f81e549",
-                    "path": "<Joystick>/stick/down",
+                    "id": "17606788-a9eb-4f2f-9095-067f8e017087",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Keyboard2",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
-                    "id": "037cd3e6-83e5-499b-8f3d-ae8779f28705",
-                    "path": "<Joystick>/stick/left",
+                    "id": "ac20cfe5-f38d-42e8-8971-1c8434be5d41",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Keyboard2",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "50a1d75a-b030-4762-b29b-27d82c3b763d",
-                    "path": "<Joystick>/stick/right",
+                    "id": "9412dfe4-ec24-4c39-9ac8-f8d365bd3f44",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Keyboard2",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -175,11 +175,11 @@
                 },
                 {
                     "name": "",
-                    "id": "2799639b-8524-466e-8bd5-ddf998842d6a",
-                    "path": "<HID::Microntek              USB Joystick          >/button2",
+                    "id": "7ffb11ff-f237-470a-86e6-4040914a0eaa",
+                    "path": "<Keyboard>/numpad2",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Keyboard2",
                     "action": "Catch",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -197,11 +197,11 @@
                 },
                 {
                     "name": "",
-                    "id": "25e0625f-f35a-493a-892e-a14096afa755",
-                    "path": "<HID::Microntek              USB Joystick          >/button3",
+                    "id": "d9bda192-4530-4e84-b75a-4ded2d9b8f27",
+                    "path": "<Keyboard>/numpad3",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Keyboard2",
                     "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -238,23 +238,18 @@
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
-                    "isOptional": false,
-                    "isOR": false
-                },
-                {
-                    "devicePath": "<Mouse>",
-                    "isOptional": false,
+                    "isOptional": true,
                     "isOR": false
                 }
             ]
         },
         {
-            "name": "Gamepad",
-            "bindingGroup": "Gamepad",
+            "name": "Keyboard2",
+            "bindingGroup": "Keyboard2",
             "devices": [
                 {
-                    "devicePath": "<Gamepad>",
-                    "isOptional": false,
+                    "devicePath": "<Keyboard>",
+                    "isOptional": true,
                     "isOR": false
                 }
             ]
