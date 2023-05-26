@@ -5,6 +5,7 @@ public class Health : MonoBehaviour
 {
     public Image ringHealthBar;
     public Image ringburnBar;
+    public Image ringLayout;
 
     float health = 0;
     float maxHealth = 100;
@@ -23,6 +24,7 @@ public class Health : MonoBehaviour
     {
         Cook(foodController.cookLevel,ref health);
         Cook(foodController.burnLevel,ref burn);
+
         ColorChanger();
         lerpSpeed = 3f * Time.deltaTime;
         HealthBarFiller();
@@ -32,6 +34,7 @@ public class Health : MonoBehaviour
     {
         ringHealthBar.fillAmount = Mathf.Lerp(ringHealthBar.fillAmount, (health / maxHealth), lerpSpeed);
         ringburnBar.fillAmount = Mathf.Lerp(ringburnBar.fillAmount, (burn / maxBurn), lerpSpeed);
+        ringLayout.fillAmount = Mathf.Lerp(ringLayout.fillAmount, (health / maxHealth), lerpSpeed);
     }
 
     void ColorChanger()
