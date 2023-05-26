@@ -23,6 +23,7 @@ public class PlayerThrowState : PlayerAblilityState
     public override void Exit()
     {
         base.Exit();
+        player.SetIsCanThrow(false);
  
     }
 

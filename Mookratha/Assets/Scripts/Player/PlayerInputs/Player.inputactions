@@ -229,6 +229,116 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "2D Vector",
+                    "id": "928e2ad3-45c4-4eff-a260-1528118c2dac",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "d4b887b6-a1d3-4962-b87a-f0476a3dbf46",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joystick2",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "a5ef5e64-ddfa-4efb-8570-5beca945d73e",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joystick2",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "ab3c1100-686b-48f4-b793-a80cae1845ee",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joystick2",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "ef05566c-df01-49ee-a17f-e6d63ebb9bc9",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joystick2",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "906f36b9-212c-438f-8169-572ae8b648a9",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "42f879b0-8390-48bb-ade4-2a267a1c79f4",
+                    "path": "<Gamepad>/leftStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joy2",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "62b2ae76-ea54-4917-b3ac-e08927b4fc62",
+                    "path": "<Gamepad>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joy2",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "c49ac27c-3dcf-4981-9f44-82e92b6d3b05",
+                    "path": "<Gamepad>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joy2",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "37c16946-e56c-42f0-9601-7720de68c829",
+                    "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joy2",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "1a2166b8-3cce-42e1-8bfa-099fc16a4c54",
                     "path": "<Keyboard>/space",
@@ -252,11 +362,22 @@
                 },
                 {
                     "name": "",
-                    "id": "c6c0c00d-d63e-433f-8f47-d0ac00384759",
+                    "id": "6d5c5e3e-4536-4c30-8c48-2f16ef9ee0bd",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joy2",
+                    "action": "Catch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "447e1ac6-6b44-4162-9719-2ca82ee8b019",
                     "path": "<HID::Microntek              USB Joystick          >/button3",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Joystick",
                     "action": "Catch",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -290,6 +411,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1e8abca8-9840-47c2-9b3d-80ae6df36d7f",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joy2",
                     "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -348,6 +480,28 @@
             "devices": [
                 {
                     "devicePath": "<Joystick>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Joystick2",
+            "bindingGroup": "Joystick2",
+            "devices": [
+                {
+                    "devicePath": "<Joystick>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Joy2",
+            "bindingGroup": "Joy2",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
                     "isOptional": false,
                     "isOR": false
                 }
