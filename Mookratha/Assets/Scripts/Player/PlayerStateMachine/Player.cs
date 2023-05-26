@@ -14,16 +14,22 @@ public class Player : MonoBehaviour
     public PlayerHoldingState HoldingState { get; private set; }
     public PlayerHoldStillState HoldStillState { get; private set; }
     public PlayerThrowState ThrowState { get; private set; }
+    public PlayerGetHitState GetHitState { get; private set; }  
 
 
     public Animator Anim { get; private set; }
     public PlayerInputHandler InputHandler { get; private set; }
     public Rigidbody RB { get;private set; }
-
+    public Transform respawndPos;
+    public GameObject HitBox;
+   
     public bool isDashing { get; private set; }
     public bool isCanHold { get; private set; }
     public bool isHolding { get; private set; }
     public bool isCanThrow { get; private set; }
+    public bool isGetingHit { get; private set; }
+    public bool isCanGetHit { get; private set; }
+
     public Vector3 facingDirection;
 
     public GameObject item;
@@ -47,6 +53,7 @@ public class Player : MonoBehaviour
         HoldingState = new PlayerHoldingState(this, StateMachine, playerData, "hold");
         HoldStillState = new PlayerHoldStillState(this, StateMachine, playerData, "holdStill");
         ThrowState = new PlayerThrowState(this, StateMachine, playerData, "throw");
+        GetHitState = new PlayerGetHitState(this, StateMachine, playerData, "fall");
     }
 
     private void Start()
@@ -54,10 +61,15 @@ public class Player : MonoBehaviour
         Anim = GetComponent<Animator>();
         InputHandler = GetComponent<PlayerInputHandler>();
         RB = GetComponent<Rigidbody>();
+        
 
         isCanHold = false;
         isHolding = false;
         isCanThrow= false;
+
+
+        isCanGetHit= true;
+        isGetingHit = false;
 
        
 
@@ -72,13 +84,7 @@ public class Player : MonoBehaviour
         
        
         StateMachine.CurrentState.LogicUpdate();
-        CheckFacingDirection();
-        /*
-        if(Input.GetKeyDown(KeyCode.Space)) 
-        {
-            Throw();
-        }
-        */
+       
 
 
 
@@ -127,6 +133,40 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "dead zone")
+        {
+            Respawn();
+        }
+
+        if(other.gameObject.tag == "hitbox")
+        {
+            Debug.Log("HIT");
+            SetIsGettingHit(true);
+        }
+ 
+    }
+
+    private void Respawn()
+    {
+        Debug.Log("Respawn Called");
+
+        if (isHolding)
+        {
+            item.transform.parent = null;
+            Destroy(item.gameObject);
+            isHolding = false;
+            SetIsCanThrow(false);
+        }
+      
+
+        transform.position = respawndPos.position;
+
+        StateMachine.ChangeState(this.IdleState);
+
+    }
+
 
 
 
@@ -156,7 +196,7 @@ public class Player : MonoBehaviour
        
         itemRigibody = item.AddComponent<Rigidbody>();
       
-        itemRigibody.AddForce(playerData.throwForceXZ*facingDirection.x,playerData.throwForceY, playerData.throwForceXZ* facingDirection.z);
+        itemRigibody.AddForce(playerData.throwForceXZ*this.transform.forward.x,playerData.throwForceY, playerData.throwForceXZ* this.transform.forward.z);
  
         item.transform.parent = null;
         itemRigibody.mass = 1000;
@@ -165,24 +205,18 @@ public class Player : MonoBehaviour
     }
 
 
-    public void CheckFacingDirection()
+    public void HitBoxActive()
     {
-        if (InputHandler.NormInputX == 1)
-        {
-            facingDirection.x = 1;
-        }
-        else if(InputHandler.NormInputX == -1)
-        {
-            facingDirection.x = -1;
-        }
-        else if (InputHandler.NormInputY == 1)
-        {
-            facingDirection.z = 1;
-        }
-        else if (InputHandler.NormInputY == -1)
-        {
-            facingDirection.z = -1;
-        }
+        HitBox.SetActive(true);
     }
 
+    public void HitBoxUnActive() { HitBox.SetActive(false); }
+
+    public void SetIsGettingHit(bool b) => isGetingHit= b;
+    public void SetIsCanGetHit(bool b) => isCanGetHit= b;
+
+    public void SetAbilityDone()
+    {
+        GetHitState.SetIsAbilityDone(true);
+    }
 }

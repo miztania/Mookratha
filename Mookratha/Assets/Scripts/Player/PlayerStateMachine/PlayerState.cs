@@ -26,7 +26,7 @@ public class PlayerState
         DoCheck();
         player.Anim.SetBool(animBoolName, true);
         startTime= Time.time;
-        Debug.Log(animBoolName);
+      //  Debug.Log(animBoolName);
     }
 
     public virtual void Exit() 
@@ -34,7 +34,13 @@ public class PlayerState
         player.Anim.SetBool(animBoolName, false);
     }
 
-    public virtual void LogicUpdate() {  }
+    public virtual void LogicUpdate() 
+    {  
+        if(player.isGetingHit && player.isCanGetHit)
+        {
+            stateMachine.ChangeState(player.GetHitState);
+        }
+    }
     public virtual void PhysicsUpdate() 
     { 
         DoCheck();

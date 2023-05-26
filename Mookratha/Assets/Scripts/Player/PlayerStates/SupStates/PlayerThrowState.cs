@@ -40,6 +40,7 @@ public class PlayerThrowState : PlayerAblilityState
         {
             player.Throw();
             isAbilityDone = true;
+            stateMachine.ChangeState(player.IdleState);
        
         }
     }

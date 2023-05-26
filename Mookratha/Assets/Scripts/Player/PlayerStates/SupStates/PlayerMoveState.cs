@@ -45,7 +45,7 @@ public class PlayerMoveState : PlayerGroundedState
         float targetAngle = Mathf.Atan2(input.x, input.y) * Mathf.Rad2Deg;
         player.transform.rotation = Quaternion.Euler(0f,targetAngle, 0f);
 
-        player.RB.velocity = new Vector3(input.x * playerData.movementSpeed, 0.0f, input.y * playerData.movementSpeed);
+        player.RB.velocity = new Vector3(input.x * playerData.movementSpeed, player.RB.velocity.y, input.y * playerData.movementSpeed);
 
       //  Vector3 direction = new Vector3(input.x,0.0f,input.y);  
 

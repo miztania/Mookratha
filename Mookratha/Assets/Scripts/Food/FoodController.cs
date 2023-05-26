@@ -29,7 +29,7 @@ public class FoodController : MonoBehaviour
       
         cookLevel = Mathf.MoveTowards(cookLevel, cookLevelMax, cookRate * Time.deltaTime);
 
-        Debug.Log("Cook Level : " + cookLevel);
+       // Debug.Log("Cook Level : " + cookLevel);
         if (cookLevel >= 40)
         {
             renderer.sharedMaterial = meterial[1];

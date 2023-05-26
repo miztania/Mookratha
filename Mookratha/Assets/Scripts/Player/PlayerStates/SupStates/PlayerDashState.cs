@@ -34,13 +34,17 @@ public class PlayerDashState : PlayerAblilityState
 
         isHolding = true;
 
+        
        
+
+        
 
     }
 
     public override void Exit()
     {
         player.SetIsDash(false);
+   
         base.Exit();
     }
 
@@ -48,15 +52,21 @@ public class PlayerDashState : PlayerAblilityState
     {
         base.LogicUpdate();
 
+      
+
+
         if(Time.time <= startTime + playerData.dashTime) 
         {
           //  Debug.Log("Dassssssssssssssssssh");
+
         }
         else
         {
-            lastDashTime= Time.time;
+            player.HitBoxActive();
+            lastDashTime = Time.time;
             isAbilityDone = true;
             isHolding= false;
+            player.HitBoxUnActive();
         }
     }
 

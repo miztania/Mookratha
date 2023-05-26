@@ -81,7 +81,7 @@ public class PlayerInputHandler : MonoBehaviour
         NormInputX = (int)(RawMovementInput * Vector2.right).normalized.x;
         NormInputY = (int)(RawMovementInput * Vector2.up).normalized.y;
 
-        Debug.Log("InputHandler"+" x:" + NormInputX + " y:" + NormInputY);
+        //Debug.Log("InputHandler"+" x:" + NormInputX + " y:" + NormInputY);
 
 
     }
