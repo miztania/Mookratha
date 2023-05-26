@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class JarnController : MonoBehaviour
 {
     public float MaxHealth = 100;
     public float currentHealth = 0;
 
+   
+
+    public Text pointText;
     public float currentPoint = 0;
 
     public HealthBar healthBar;
@@ -19,9 +24,12 @@ public class JarnController : MonoBehaviour
 
     private void Update()
     {
+        pointText.text = currentPoint.ToString();
         healthBar.SetHealth((int)currentHealth);
     }
 
+
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "food")
@@ -29,7 +37,18 @@ public class JarnController : MonoBehaviour
             currentHealth -= 10;
         }
     }
+    */
 
+
+    public void EatFood(float foodPoint)
+    {
+        currentPoint += foodPoint;
+    }
+
+    public void EatFoodSetHealth(float foodHealth)
+    {
+        currentHealth += foodHealth;
+    }
 
 
 }
