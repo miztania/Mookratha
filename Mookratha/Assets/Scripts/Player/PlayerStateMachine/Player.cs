@@ -211,6 +211,19 @@ public class Player : MonoBehaviour
      
     }
 
+    public void Drop()
+    {
+        if (isHolding)
+        {
+            itemRigibody = item.AddComponent<Rigidbody>();
+            item.transform.parent = null;
+            itemRigibody.mass = 1000;
+            isHolding = false;
+            SetIsCanThrow(false);
+        }
+    }
+        
+
 
     public void HitBoxActive()
     {

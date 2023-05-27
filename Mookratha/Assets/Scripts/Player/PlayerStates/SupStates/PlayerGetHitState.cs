@@ -16,6 +16,7 @@ public class PlayerGetHitState : PlayerAblilityState
     public override void Enter()
     {
         base.Enter();
+        player.Drop();
     }
 
     public override void Exit()
