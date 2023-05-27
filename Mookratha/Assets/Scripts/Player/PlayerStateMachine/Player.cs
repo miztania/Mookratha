@@ -108,29 +108,36 @@ public class Player : MonoBehaviour
 
     public void OnCollisionStay(Collision collision)
     {
-       
 
-        if (collision.gameObject.tag == "food")
+        if (!isHolding)
         {
-           // Debug.Log("Hit Food");
-            item = collision.gameObject;
-            itemRigibody = collision.rigidbody;
-            isCanHold= true;
-            
-           // PickUp();
+            if (collision.gameObject.tag == "food")
+            {
+                // Debug.Log("Hit Food");
+                item = collision.gameObject;
+                itemRigibody = collision.rigidbody;
+                isCanHold = true;
+
+                // PickUp();
+            }
         }
+      
     }
 
     public void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.tag == "food")
+        if (!isHolding)
         {
-            item = null;
-            itemRigibody = null;
-            isCanHold = false;
+            if (collision.gameObject.tag == "food")
+            {
+                item = null;
+                itemRigibody = null;
+                isCanHold = false;
 
-            // PickUp();
+                // PickUp();
+            }
         }
+            
     }
 
     private void OnTriggerEnter(Collider other)
@@ -193,7 +200,7 @@ public class Player : MonoBehaviour
 
     public void Throw()
     {
-        if (isCanThrow)
+        if (isCanThrow && isHolding)
         {
             itemRigibody = item.AddComponent<Rigidbody>();
 

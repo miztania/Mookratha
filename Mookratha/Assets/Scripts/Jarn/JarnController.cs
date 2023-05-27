@@ -8,7 +8,7 @@ public class JarnController : MonoBehaviour
 {
     public float MaxHealth = 100;
     public float currentHealth = 0;
-
+    public GameObject PlayerGameObject;
    
 
     public Text pointText;
@@ -31,6 +31,11 @@ public class JarnController : MonoBehaviour
         if(currentHealth >= MaxHealth)
         {
             currentHealth = MaxHealth;
+        }
+
+        if(currentHealth <= 0)
+        {
+            Destroy(PlayerGameObject);
         }
     }
 
