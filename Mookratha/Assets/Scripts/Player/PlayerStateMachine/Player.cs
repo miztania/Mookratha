@@ -193,15 +193,22 @@ public class Player : MonoBehaviour
 
     public void Throw()
     {
+        if (isCanThrow)
+        {
+            itemRigibody = item.AddComponent<Rigidbody>();
+
+            itemRigibody.AddForce(playerData.throwForceXZ * this.transform.forward.x, playerData.throwForceY, playerData.throwForceXZ * this.transform.forward.z);
+
+            item.transform.parent = null;
+            itemRigibody.mass = 1000;
+            isHolding = false;
+            SetIsCanThrow(false);
+
+
+        }
        
-        itemRigibody = item.AddComponent<Rigidbody>();
-      
-        itemRigibody.AddForce(playerData.throwForceXZ*this.transform.forward.x,playerData.throwForceY, playerData.throwForceXZ* this.transform.forward.z);
  
-        item.transform.parent = null;
-        itemRigibody.mass = 1000;
-        isHolding = false;
-        SetIsCanThrow(false);
+     
     }
 
 

@@ -26,6 +26,12 @@ public class JarnController : MonoBehaviour
     {
         pointText.text = currentPoint.ToString();
         healthBar.SetHealth((int)currentHealth);
+
+
+        if(currentHealth >= MaxHealth)
+        {
+            currentHealth = MaxHealth;
+        }
     }
 
 
