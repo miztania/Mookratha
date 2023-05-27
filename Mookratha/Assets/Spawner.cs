@@ -4,22 +4,32 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+
     public GameObject[] foodObject;
 
     private Vector3 randomSpawnPosition;
-    public float spawndTime = 5f;
-    public float startTime;
+
+    [Header("Spawning")]
+    public float timeDuringSpawning = 2.0f;
+    public float timeSpawnPeriod = 10f;
+
+    [Header("Randon Details")]
+    public float randomRange = 3f;
+    public float hightSpawn = 10f;
+
+
+
     private int  foodRandomNum;
     private void Start()
     {
-        startTime = Time.time;
-        InvokeRepeating("CreateFood", 1.0f, 10f);
+    
+        InvokeRepeating("CreateFood", timeDuringSpawning, timeSpawnPeriod);
     }
 
 
     private void Update()
     {
-        randomSpawnPosition = new Vector3(Random.Range(-3, 3), 10, Random.Range(-3, 3));
+        randomSpawnPosition = new Vector3(Random.Range(-randomRange, randomRange), hightSpawn, Random.Range(-randomRange, randomRange));
         foodRandomNum = Random.Range(0, foodObject.Length);
 
     

@@ -1,9 +1,10 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
-public class FoodController : MonoBehaviour
+public class FoodBoomController : MonoBehaviour
 {
     public Material[] meterial;
     Renderer renderer;
@@ -14,7 +15,6 @@ public class FoodController : MonoBehaviour
     public float cookLevel = 0;
     public float cookLevelMax = 100;
     public float cookRate = 0.2f;
-    public float doneLevel = 50;
 
     //Plume Added
     public float burnLevel = 0;
@@ -30,6 +30,11 @@ public class FoodController : MonoBehaviour
     public float RawSetHealth = -10;
     public float DoneSetHealth = 10;
     public float BurnSetHealth = -10;
+
+
+    [Header("Food Effects")]
+    public GameObject boomEffect;
+    public float boomTime;
     
     
     public float foodStage;
@@ -81,26 +86,26 @@ public class FoodController : MonoBehaviour
         
 
         if (cookLevel >= 40)
+        {
+            renderer.sharedMaterial = meterial[1];
+        }
 
         if(cookLevel.Equals(cookLevelMax)) burnLevel = Mathf.MoveTowards(burnLevel, burnLevelMax, burnRate * Time.deltaTime);
 
        // Debug.Log("Cook Level : " + cookLevel);
-        if (cookLevel >= doneLevel)
+        if (cookLevel >= 60)
 
         {
-            renderer.sharedMaterial = meterial[1];
-            foodPoint = DonePoint;
-            foodStage = DoneSetHealth;
+            this.transform.parent = null;
+            boomEffect.SetActive(true);
 
 
         }
 
-        if (cookLevel >= 100) 
+        if (cookLevel >= 65) 
         {
-            renderer.sharedMaterial = meterial[2];
-            foodPoint = BurnPoint;
-            foodStage = BurnSetHealth;
-
+            boomEffect.SetActive(false);
+            Destroy(this.gameObject);
         }
 
         /*
@@ -129,7 +134,6 @@ public class FoodController : MonoBehaviour
             startTime = Time.time;
             other.SendMessage("EatFood", foodPoint);
             other.SendMessage("EatFoodSetHealth", foodStage);
-            
         }
     }
 

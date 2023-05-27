@@ -121,7 +121,9 @@ public class Player : MonoBehaviour
                 // PickUp();
             }
         }
+
       
+
     }
 
     public void OnCollisionExit(Collision collision)
@@ -137,7 +139,9 @@ public class Player : MonoBehaviour
                 // PickUp();
             }
         }
-            
+
+       
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -153,6 +157,18 @@ public class Player : MonoBehaviour
             SetIsGettingHit(true);
         }
  
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+
+       
+
+        if (other.gameObject.tag == "hitbox")
+        {
+            Debug.Log("Boom");
+            SetIsGettingHit(true);
+        }
     }
 
     private void Respawn()
@@ -211,7 +227,6 @@ public class Player : MonoBehaviour
             isHolding = false;
             SetIsCanThrow(false);
 
-
         }
        
  
@@ -228,6 +243,12 @@ public class Player : MonoBehaviour
             isHolding = false;
             SetIsCanThrow(false);
         }
+    }
+
+    public void Hit()
+    {
+        Debug.Log("Hit recived");
+        SetIsGettingHit(true);
     }
         
 
