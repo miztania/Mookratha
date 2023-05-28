@@ -7,10 +7,9 @@ public class Health : MonoBehaviour
     public Image ringburnBar;
     public Image ringLayout;
 
-    float health = 0;
-    float maxHealth = 100;
-    float burn = 0;
-    float maxBurn = 100;
+    float doneLevel = 0;
+    float burnLevel = 0;
+    float maxLevel = 100;
 
     float lerpSpeed;
     FoodController foodController;
@@ -22,8 +21,8 @@ public class Health : MonoBehaviour
 
     private void Update()
     {
-        Cook(foodController.cookLevel,ref health);
-        Cook(foodController.burnLevel,ref burn);
+        CookToDone(foodController.cookLevel,ref doneLevel);
+        DoneToBurn(foodController.cookLevel, ref burnLevel);
 
         ColorChanger();
         lerpSpeed = 3f * Time.deltaTime;
@@ -32,21 +31,26 @@ public class Health : MonoBehaviour
 
     void HealthBarFiller()
     {
-        ringHealthBar.fillAmount = Mathf.Lerp(ringHealthBar.fillAmount, (health / maxHealth), lerpSpeed);
-        ringburnBar.fillAmount = Mathf.Lerp(ringburnBar.fillAmount, (burn / maxBurn), lerpSpeed);
-        ringLayout.fillAmount = Mathf.Lerp(ringLayout.fillAmount, (health / maxHealth), lerpSpeed);
+        ringHealthBar.fillAmount = Mathf.Lerp(ringHealthBar.fillAmount, (doneLevel / maxLevel), lerpSpeed);
+        ringburnBar.fillAmount = Mathf.Lerp(ringburnBar.fillAmount, (burnLevel / maxLevel), lerpSpeed);
+        ringLayout.fillAmount = Mathf.Lerp(ringLayout.fillAmount, (doneLevel / maxLevel), lerpSpeed);
     }
 
     void ColorChanger()
     {
-        Color healthColor = Color.Lerp(Color.red, Color.green, (health / maxHealth));
-        Color burnColor = Color.Lerp(Color.green, Color.black, (burn / maxBurn));
+        Color healthColor = Color.Lerp(Color.red, Color.green, (doneLevel / maxLevel));
+        Color burnColor = Color.Lerp(Color.green, Color.black, (burnLevel / maxLevel));
         ringHealthBar.color = healthColor;
         ringburnBar.color = burnColor;
     }
 
-    public void Cook(float cal, ref float valueForEqual)
+    public void CookToDone(float cal, ref float valueForEqual)
     {
-        valueForEqual = cal;
+        if (valueForEqual < 100) valueForEqual = cal * 2;
+    }
+
+    public void DoneToBurn(float cal, ref float valueForEqual)
+    {
+        if (cal > 50 && valueForEqual < 100) valueForEqual = (cal - 50) * 2;
     }
 }
