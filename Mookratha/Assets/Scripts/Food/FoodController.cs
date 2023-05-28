@@ -16,12 +16,6 @@ public class FoodController : MonoBehaviour
     public float cookRate = 0.2f;
     public float doneLevel = 50;
 
-    //Plume Added
-    public float burnLevel = 0;
-    public float burnLevelMax = 100;
-    public float burnRate = 12;
-
-
     [Header("Food Details")]
     public float RawPoint = -30;
     public float DonePoint = 30;
@@ -81,8 +75,6 @@ public class FoodController : MonoBehaviour
         
 
         if (cookLevel >= 40)
-
-        if(cookLevel.Equals(cookLevelMax)) burnLevel = Mathf.MoveTowards(burnLevel, burnLevelMax, burnRate * Time.deltaTime);
 
        // Debug.Log("Cook Level : " + cookLevel);
         if (cookLevel >= doneLevel)
