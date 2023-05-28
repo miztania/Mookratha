@@ -102,10 +102,11 @@ MonoBehaviour:
   meterial:
   - {fileID: 2100000, guid: 12ff5212f2a92be45b0e15c24bc244d4, type: 2}
   - {fileID: 2100000, guid: 3d765ca3c0d103a41aef9654563439fc, type: 2}
-  - {fileID: 2100000, guid: e074ac715c87f0d4daae75afab5b1c29, type: 2}
+  - {fileID: 2100000, guid: c8f83e08c30c0304298508d793422cbb, type: 2}
   cookLevel: 0
   cookLevelMax: 100
   cookRate: 5
+  doneLevel: 50
   burnLevel: 0
   burnLevelMax: 100
   burnRate: 5
