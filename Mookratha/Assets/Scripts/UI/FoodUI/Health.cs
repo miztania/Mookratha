@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
 
     float doneLevel = 0;
     float burnLevel = 0;
-    float maxLevel = 100;
+    public float maxLevel = 95;
 
     float lerpSpeed;
     FoodController foodController;

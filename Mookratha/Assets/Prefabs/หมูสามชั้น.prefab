@@ -405,9 +405,6 @@ MonoBehaviour:
   cookLevelMax: 100
   cookRate: 6
   doneLevel: 50
-  burnLevel: 0
-  burnLevelMax: 100
-  burnRate: 12
   RawPoint: -30
   DonePoint: 30
   BurnPoint: -30
@@ -433,6 +430,7 @@ MonoBehaviour:
   ringHealthBar: {fileID: 1487051335966169260}
   ringburnBar: {fileID: 8593541205540836378}
   ringLayout: {fileID: 7506595398366067196}
+  maxLevel: 95
 --- !u!1 &8248812639940551119
 GameObject:
   m_ObjectHideFlags: 0
