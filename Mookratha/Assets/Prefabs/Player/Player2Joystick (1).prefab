@@ -1111,7 +1111,7 @@ MonoBehaviour:
     m_ActionId: 75a120bd-1942-4e72-8492-503ea664ab13
     m_ActionName: Gameplay/SecondaryAttack[/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Joy2
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -1383,8 +1383,8 @@ Transform:
   m_GameObject: {fileID: 8600844165007350150}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
   m_LocalPosition: {x: -0.20000048, y: 3.3571424, z: 5.68}
-  m_LocalScale: {x: 2.8571427, y: 2.8571427, z: 2.8571427}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 4.95, y: 4.95, z: 4.95}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4372435470806127115}
   m_RootOrder: 3

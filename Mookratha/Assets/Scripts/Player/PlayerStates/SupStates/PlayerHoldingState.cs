@@ -44,7 +44,11 @@ public class PlayerHoldingState : PlayerMoveState
 
         }
 
-        if ((input.x == 0 && input.y == 0) && isHolding)
+        if (player.isGetingHit)
+        {
+            stateMachine.ChangeState(player.GetHitState);
+        }
+        else if ((input.x == 0 && input.y == 0) && isHolding)
         {
             stateMachine.ChangeState(player.HoldStillState);
         }

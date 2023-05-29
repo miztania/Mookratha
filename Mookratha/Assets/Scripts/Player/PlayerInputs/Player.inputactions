@@ -300,7 +300,7 @@
                     "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Joy2",
+                    "groups": "Gamepadxbox",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -311,7 +311,7 @@
                     "path": "<Gamepad>/leftStick/down",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Joy2",
+                    "groups": "Gamepadxbox",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -322,7 +322,7 @@
                     "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Joy2",
+                    "groups": "Gamepadxbox",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -333,7 +333,7 @@
                     "path": "<Gamepad>/leftStick/right",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Joy2",
+                    "groups": "Gamepadxbox",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -366,7 +366,7 @@
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Joy2",
+                    "groups": "Gamepadxbox",
                     "action": "Catch",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -421,7 +421,7 @@
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Joy2",
+                    "groups": "Gamepadxbox",
                     "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -497,8 +497,8 @@
             ]
         },
         {
-            "name": "Joy2",
-            "bindingGroup": "Joy2",
+            "name": "Gamepadxbox",
+            "bindingGroup": "Gamepadxbox",
             "devices": [
                 {
                     "devicePath": "<Gamepad>",
