@@ -10,27 +10,27 @@ public class Player : MonoBehaviour
     public PlayerStateMachine StateMachine { get; private set; }
 
     public PlayerIdleState IdleState { get; private set; }
-    public PlayerMoveState MoveState { get; private set; }  
+    public PlayerMoveState MoveState { get; private set; }
     public PlayerDashState DashState { get; private set; }
     public PlayerHoldingState HoldingState { get; private set; }
     public PlayerHoldStillState HoldStillState { get; private set; }
     public PlayerThrowState ThrowState { get; private set; }
-    public PlayerGetHitState GetHitState { get; private set; }  
+    public PlayerGetHitState GetHitState { get; private set; }
 
 
     public Animator Anim { get; private set; }
     public PlayerInputHandler InputHandler { get; private set; }
-    public Rigidbody RB { get;private set; }
+    public Rigidbody RB { get; private set; }
     public Transform respawndPos;
     public GameObject HitBox;
-   
+
     public bool isDashing { get; private set; }
     public bool isCanHold { get; private set; }
     public bool isHolding { get; private set; }
     public bool isCanThrow { get; private set; }
     public bool isGetingHit { get; private set; }
     public bool isCanGetHit { get; private set; }
- 
+
 
     public Vector3 facingDirection;
 
@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
     public GameObject playerPrefab;
     [SerializeField]
     private PlayerData playerData;
-    
+
     private Vector3 workSpace;
 
     public float finishThrowTime;
@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
     {
         StateMachine = new PlayerStateMachine();
 
-        IdleState = new PlayerIdleState(this,StateMachine,playerData,"idle");
+        IdleState = new PlayerIdleState(this, StateMachine, playerData, "idle");
         MoveState = new PlayerMoveState(this, StateMachine, playerData, "move");
         DashState = new PlayerDashState(this, StateMachine, playerData, "dash");
         HoldingState = new PlayerHoldingState(this, StateMachine, playerData, "hold");
@@ -64,17 +64,17 @@ public class Player : MonoBehaviour
         Anim = GetComponent<Animator>();
         InputHandler = GetComponent<PlayerInputHandler>();
         RB = GetComponent<Rigidbody>();
-        
+
 
         isCanHold = false;
         isHolding = false;
-        isCanThrow= false;
+        isCanThrow = false;
 
 
-        isCanGetHit= true;
+        isCanGetHit = true;
         isGetingHit = false;
 
-       
+
 
 
 
@@ -85,33 +85,33 @@ public class Player : MonoBehaviour
     private void Update()
     {
 
-        Debug.Log("isCanHold :" + isCanHold  );
+        Debug.Log("isCanHold :" + isCanHold);
 
-       if(this.transform.position.y <= -20)
+        if (this.transform.position.y <= -20)
         {
             Respawn();
         }
 
 
-   
-      /*
-       
-       if(Time.deltaTime <= finishThrowTime + holdDelayAfterThrow)
-        {
-            isCanHold = false;
-        }
-        else
-        {
-            isCanHold = true;
-      
-        }
-      */
+
+        /*
+
+         if(Time.deltaTime <= finishThrowTime + holdDelayAfterThrow)
+          {
+              isCanHold = false;
+          }
+          else
+          {
+              isCanHold = true;
+
+          }
+        */
 
 
 
 
         StateMachine.CurrentState.LogicUpdate();
-       
+
 
 
 
@@ -124,7 +124,7 @@ public class Player : MonoBehaviour
 
     public void SetVeclocity(float velocity)
     {
-      
+
 
     }
 
@@ -142,15 +142,14 @@ public class Player : MonoBehaviour
             if (collision.gameObject.tag == "food")
             {
                 // Debug.Log("Hit Food");
+
                 item = collision.gameObject;
                 itemRigibody = collision.rigidbody;
                 isCanHold = true;
-
-                // PickUp();
             }
         }
 
-      
+
 
     }
 
@@ -168,37 +167,37 @@ public class Player : MonoBehaviour
             }
         }
 
-       
+
 
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "dead zone")
+        if (other.gameObject.tag == "dead zone")
         {
             Respawn();
         }
 
-        if(other.gameObject.tag == "hitbox")
+        if (other.gameObject.tag == "hitbox")
         {
             Debug.Log("HIT");
             SetIsGettingHit(true);
         }
 
-        if(other.gameObject.tag == "jarn")
+        if (other.gameObject.tag == "jarn")
         {
             if (isHolding)
             {
                 Drop();
             }
         }
- 
+
     }
 
     private void OnTriggerStay(Collider other)
     {
 
-       
+
 
         if (other.gameObject.tag == "hitbox")
         {
@@ -218,7 +217,7 @@ public class Player : MonoBehaviour
             isHolding = false;
             SetIsCanThrow(false);
         }
-      
+
 
         transform.position = respawndPos.position;
 
@@ -233,28 +232,31 @@ public class Player : MonoBehaviour
 
     public void PickUp()
     {
-        if (!isHolding)
+        if (!isHolding && isCanHold)
         {
-            item.gameObject.tag = "foodUnholdable";
-            item.gameObject.layer = LayerMask.NameToLayer("FoodUnholdable");
-            item.transform.position += new Vector3(0, 0.8f, 0);
-            item.transform.SetParent(this.transform);
-
-
-           Destroy(itemRigibody);
+            if (item.gameObject.tag == "food")
+            {
+                item.gameObject.tag = "foodUnholdable";
+                item.gameObject.layer = LayerMask.NameToLayer("FoodUnholdable");
+                item.transform.position += new Vector3(0, 0.8f, 0);
+                item.transform.SetParent(this.transform);
+                Destroy(itemRigibody);
+            }
         }
+
+
         // item.transform.localPosition = Vector3.MoveTowards(item.transform.position, holdPosition.transform.position, 0.1f);
         // item.transform.position = holdPosition.transform.position;
         //item.transform.localRotation = holdPosition.transform.localRotation;
-    
-      
+
+
     }
 
     public void SetIsHolding(bool b) => isHolding = b;
 
     public void Throw()
     {
-        if (isCanThrow && isHolding)
+        if (isCanThrow && isHolding )
         {
             item.gameObject.tag = "food";
             item.gameObject.layer = LayerMask.NameToLayer("Food");
@@ -277,6 +279,8 @@ public class Player : MonoBehaviour
     {
         if (isHolding)
         {
+            item.gameObject.tag = "food";
+            item.gameObject.layer = LayerMask.NameToLayer("Food");
             itemRigibody = item.AddComponent<Rigidbody>();
             item.transform.parent = null;
             itemRigibody.mass = 1000;

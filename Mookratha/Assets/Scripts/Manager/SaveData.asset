@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c136867b5e1a9d46b7e8e897ba6ef39, type: 3}
   m_Name: SaveData
   m_EditorClassIdentifier: 
-  round: 1
-  player1Score: 12
-  player2Score: 23
-  player3Score: 11
-  player4Score: 75
+  round: 10
+  player1Score: -180
+  player2Score: -30
+  player3Score: -330
+  player4Score: -60

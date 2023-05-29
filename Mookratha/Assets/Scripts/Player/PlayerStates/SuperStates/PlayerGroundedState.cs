@@ -48,7 +48,7 @@ public class PlayerGroundedState : PlayerState
         {
             stateMachine.ChangeState(player.DashState);
         }
-        else if (player.isCanHold && catchInput)
+        else if (player.isCanHold && catchInput && player.item.gameObject.tag  == "food")
         {
             stateMachine.ChangeState(player.HoldingState);
         }
