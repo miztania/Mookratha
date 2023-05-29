@@ -36,7 +36,7 @@ public class PlayerMoveState : PlayerGroundedState
         {
             stateMachine.ChangeState(player.IdleState);
         }
-        else if (catchInput && !isHolding && !player.isGetingHit)
+        else if (catchInput && !isHolding && !player.isGetingHit && player.isCanHold)
         {
             stateMachine.ChangeState(player.HoldingState);
         }

@@ -23,6 +23,7 @@ public class PlayerThrowState : PlayerAblilityState
     public override void Exit()
     {
         base.Exit();
+        player.SetFinishedThrowTime(Time.time);
         player.SetIsCanThrow(false);
  
     }
@@ -31,6 +32,9 @@ public class PlayerThrowState : PlayerAblilityState
     {
         base.LogicUpdate();
 
+
+
+        player.SetIsCanHold(false);
 
         if (Time.time <= startTime + playerData.throwTime)
         {

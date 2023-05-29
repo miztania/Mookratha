@@ -24,21 +24,27 @@ public class PlayerHoldStillState : PlayerState
     public override void Enter()
     {
         base.Enter();
+      //  player.SetIsCanHold(false);
         player.SetIsHolding(true);
         player.RB.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+      
 
-    //    player.Throw();
+        //    player.Throw();
     }
 
     public override void Exit()
     {
         base.Exit();
-       // player.SetIsHolding(false);
+       
+        // player.SetIsHolding(false);
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+
+        player.SetIsCanHold(false);
 
         input.x = player.InputHandler.NormInputX;
         input.y = player.InputHandler.NormInputY;
@@ -46,8 +52,18 @@ public class PlayerHoldStillState : PlayerState
         catchInput = player.InputHandler.JumpInput;
         isHolding = player.isHolding;
 
+        
+        
+        if (Time.time >= startTime + playerData.holdBeforeThrow + 0.5)
+        {
+            player.SetIsCanThrow(true);
+        }
+        
 
-        if ((input.x != 0f || input.y != 0f))
+        
+
+
+        if ((input.x != 0f || input.y != 0f) && isHolding)
         {
             stateMachine.ChangeState(player.HoldingState);
         }

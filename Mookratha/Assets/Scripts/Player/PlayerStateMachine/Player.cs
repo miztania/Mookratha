@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEditor.Progress;
@@ -29,6 +30,7 @@ public class Player : MonoBehaviour
     public bool isCanThrow { get; private set; }
     public bool isGetingHit { get; private set; }
     public bool isCanGetHit { get; private set; }
+ 
 
     public Vector3 facingDirection;
 
@@ -38,10 +40,11 @@ public class Player : MonoBehaviour
     public GameObject playerPrefab;
     [SerializeField]
     private PlayerData playerData;
-
-    private Vector3 workSpace;
     
+    private Vector3 workSpace;
 
+    public float finishThrowTime;
+    public float holdDelayAfterThrow = 0.5f;
 
     private void Awake()
     {
@@ -80,12 +83,33 @@ public class Player : MonoBehaviour
     }
 
     private void Update()
-    { 
-        
+    {
+
+        Debug.Log("isCanHold :" + isCanHold  );
+
        if(this.transform.position.y <= -20)
         {
             Respawn();
         }
+
+
+   
+      /*
+       
+       if(Time.deltaTime <= finishThrowTime + holdDelayAfterThrow)
+        {
+            isCanHold = false;
+        }
+        else
+        {
+            isCanHold = true;
+      
+        }
+      */
+
+
+
+
         StateMachine.CurrentState.LogicUpdate();
        
 
@@ -106,7 +130,8 @@ public class Player : MonoBehaviour
 
     public void SetIsDash(bool b) => isDashing = b;
     public void SetIsCanThrow(bool b) => isCanThrow = b;
-
+    public void SetIsCanHold(bool b) => isCanHold = b;
+    public void SetFinishedThrowTime(float f) => finishThrowTime = f;
 
 
     public void OnCollisionStay(Collision collision)
@@ -159,6 +184,14 @@ public class Player : MonoBehaviour
             Debug.Log("HIT");
             SetIsGettingHit(true);
         }
+
+        if(other.gameObject.tag == "jarn")
+        {
+            if (isHolding)
+            {
+                Drop();
+            }
+        }
  
     }
 
@@ -202,6 +235,8 @@ public class Player : MonoBehaviour
     {
         if (!isHolding)
         {
+            item.gameObject.tag = "foodUnholdable";
+            item.gameObject.layer = LayerMask.NameToLayer("FoodUnholdable");
             item.transform.position += new Vector3(0, 0.8f, 0);
             item.transform.SetParent(this.transform);
 
@@ -221,6 +256,8 @@ public class Player : MonoBehaviour
     {
         if (isCanThrow && isHolding)
         {
+            item.gameObject.tag = "food";
+            item.gameObject.layer = LayerMask.NameToLayer("Food");
             itemRigibody = item.AddComponent<Rigidbody>();
 
             itemRigibody.AddForce(playerData.throwForceXZ * this.transform.forward.x, playerData.throwForceY, playerData.throwForceXZ * this.transform.forward.z);

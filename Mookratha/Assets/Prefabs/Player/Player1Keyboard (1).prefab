@@ -863,8 +863,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.5984783, y: 5.7553935, z: 2.137084}
-  m_Center: {x: -0.41049173, y: 2.377696, z: 0.5685432}
+  m_Size: {x: 3.5984783, y: 5.0203323, z: 2.4317605}
+  m_Center: {x: -0.41049173, y: 2.7452266, z: 0.7158811}
 --- !u!95 &3056233518835040004
 Animator:
   serializedVersion: 5
@@ -991,6 +991,8 @@ MonoBehaviour:
   holdPosition: {fileID: 3056233517955187227}
   playerPrefab: {fileID: 0}
   playerData: {fileID: 11400000, guid: e121a02472145bf4f8f8314883cce8c3, type: 2}
+  finishThrowTime: 0
+  holdDelayAfterThrow: 0.5
 --- !u!114 &3056233518835040000
 MonoBehaviour:
   m_ObjectHideFlags: 0

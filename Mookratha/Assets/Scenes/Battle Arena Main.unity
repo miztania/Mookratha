@@ -1304,7 +1304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5475012332611937212, guid: a65220d7768ac5344b557bbb66330809, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5475013416184186560, guid: a65220d7768ac5344b557bbb66330809, type: 3}
       propertyPath: m_Layer
@@ -1881,7 +1881,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7393436138137003323, guid: 508d6b7a99fda0648bdd035fc8158897, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7913126164762296193, guid: 508d6b7a99fda0648bdd035fc8158897, type: 3}
       propertyPath: m_RootOrder
@@ -3944,7 +3944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4370585691095720667, guid: ab43d0be89f002047a67b67bf6bf87f0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4372435470806127115, guid: ab43d0be89f002047a67b67bf6bf87f0, type: 3}
       propertyPath: m_RootOrder
@@ -4816,10 +4816,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -14.839138
       objectReference: {fileID: 0}
+    - target: {fileID: 3056233518835040000, guid: 8b984c23620830e4d8965cc16489f1d0, type: 3}
+      propertyPath: inputHoldTime
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3056233518835040024, guid: 8b984c23620830e4d8965cc16489f1d0, type: 3}
       propertyPath: respawndPos
       value: 
       objectReference: {fileID: 1066204738}
+    - target: {fileID: 3056233518835040024, guid: 8b984c23620830e4d8965cc16489f1d0, type: 3}
+      propertyPath: holdDelayAfterThrow
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3056233518835040030, guid: 8b984c23620830e4d8965cc16489f1d0, type: 3}
       propertyPath: m_DefaultControlScheme
       value: Joystick
@@ -4991,7 +4999,7 @@ PrefabInstance:
       objectReference: {fileID: 84818387}
     - target: {fileID: 4368996145665183517, guid: ab43d0be89f002047a67b67bf6bf87f0, type: 3}
       propertyPath: m_DefaultControlScheme
-      value: Gamepadxbox
+      value: Keyboard
       objectReference: {fileID: 0}
     - target: {fileID: 4370585691095720667, guid: ab43d0be89f002047a67b67bf6bf87f0, type: 3}
       propertyPath: m_Name

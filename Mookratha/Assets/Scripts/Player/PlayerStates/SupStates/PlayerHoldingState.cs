@@ -16,10 +16,11 @@ public class PlayerHoldingState : PlayerMoveState
     public override void Enter()
     {
         base.Enter();
-
+        
         player.PickUp();
         player.SetIsHolding(true);
-      
+
+       
     }
 
     public override void Exit()
@@ -33,6 +34,8 @@ public class PlayerHoldingState : PlayerMoveState
         base.LogicUpdate();
 
 
+        player.SetIsCanHold(false);
+
         if (Time.time <= startTime + playerData.holdBeforeThrow)
         {
           
@@ -43,6 +46,7 @@ public class PlayerHoldingState : PlayerMoveState
             player.SetIsCanThrow(true);
 
         }
+        
 
         if (player.isGetingHit)
         {
