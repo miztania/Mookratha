@@ -28,11 +28,15 @@ public class PlayerMoveState : PlayerGroundedState
     {
         base.LogicUpdate();
 
-        if((input.x == 0 && input.y == 0) && !isHolding)
+        if( player.isGetingHit)
+        {
+            stateMachine.ChangeState(player.GetHitState);
+        }
+        else if((input.x == 0 && input.y == 0) && !isHolding)
         {
             stateMachine.ChangeState(player.IdleState);
         }
-        else if (catchInput && !isHolding)
+        else if (catchInput && !isHolding && !player.isGetingHit)
         {
             stateMachine.ChangeState(player.HoldingState);
         }
