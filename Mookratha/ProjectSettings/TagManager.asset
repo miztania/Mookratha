@@ -10,6 +10,7 @@ TagManager:
   - hitbox
   - jarn
   - foodUnholdable
+  - jarnbottom
   layers:
   - Default
   - TransparentFX

@@ -184,26 +184,20 @@ public class Player : MonoBehaviour
             SetIsGettingHit(true);
         }
 
-        if (other.gameObject.tag == "jarn")
-        {
-            if (isHolding)
-            {
-                Drop();
-            }
-        }
+       
 
     }
 
     private void OnTriggerStay(Collider other)
     {
 
-
-
         if (other.gameObject.tag == "hitbox")
         {
             Debug.Log("Boom");
             SetIsGettingHit(true);
         }
+
+       
     }
 
     private void Respawn()
