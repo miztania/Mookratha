@@ -18,7 +18,7 @@ public class Timer : MonoBehaviour
 
     private void Start()
     {
-
+        currentTime = 180;
     }
 
     private void Update()
