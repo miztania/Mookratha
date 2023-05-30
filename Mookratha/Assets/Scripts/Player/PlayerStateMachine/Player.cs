@@ -250,7 +250,7 @@ public class Player : MonoBehaviour
 
     public void Throw()
     {
-        if (isCanThrow && isHolding )
+        if (isCanThrow && isHolding  )
         {
             item.gameObject.tag = "food";
             item.gameObject.layer = LayerMask.NameToLayer("Food");

@@ -45,6 +45,6 @@ public class PlayerAblilityState : PlayerState
     {
         base.PhysicsUpdate();
     }
-
     public void SetIsAbilityDone(bool b) => isAbilityDone= b;
+
 }

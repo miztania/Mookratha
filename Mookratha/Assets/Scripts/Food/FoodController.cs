@@ -122,6 +122,8 @@ public class FoodController : MonoBehaviour
             other.SendMessage("EatFood", foodPoint);
             other.SendMessage("EatFoodSetHealth", foodStage);
             
+
+            this.transform.parent= null;
         }
     }
 
