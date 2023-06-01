@@ -85,29 +85,12 @@ public class Player : MonoBehaviour
     private void Update()
     {
 
-        Debug.Log("isCanHold :" + isCanHold);
+       // Debug.Log("isCanHold :" + isCanHold);
 
         if (this.transform.position.y <= -20)
         {
             Respawn();
         }
-
-
-
-        /*
-
-         if(Time.deltaTime <= finishThrowTime + holdDelayAfterThrow)
-          {
-              isCanHold = false;
-          }
-          else
-          {
-              isCanHold = true;
-
-          }
-        */
-
-
 
 
         StateMachine.CurrentState.LogicUpdate();
