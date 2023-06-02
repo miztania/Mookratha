@@ -16,6 +16,6 @@ MonoBehaviour:
   dashCoolDown: 2
   dashTime: 1
   throwForceXZ: 522
-  throwForceY: 100
+  throwForceY: 200
   throwTime: 0.5
   holdBeforeThrow: 0.2
