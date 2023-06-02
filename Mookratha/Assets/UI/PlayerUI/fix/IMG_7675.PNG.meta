@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6e21ddb5cf7487748ba05ec8e410aec3
+guid: bbcdec19ccc75694e807f6fb4ac33965
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "sprite sheet \u0E15\u0E35\u0E4B\u0E2D\u0E34\u0E48\u0E21_0"
+      name: IMG_7675_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e23d280ad2c17e14ebfdfababe53de88
-      internalID: -533100186
+      spriteID: 92c64c665e6517346a5edb6aa7eee0bd
+      internalID: 31766372
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "sprite sheet \u0E15\u0E35\u0E4B\u0E2D\u0E34\u0E48\u0E21_1"
+      name: IMG_7675_1
       rect:
         serializedVersion: 2
         x: 700
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bacac3a57d8f49c46bddd8c1bdfaad0c
-      internalID: -1620536179
+      spriteID: 8818042070b43a94cb1ea9e2de0c7a90
+      internalID: -1790895106
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "sprite sheet \u0E15\u0E35\u0E4B\u0E2D\u0E34\u0E48\u0E21_2"
+      name: IMG_7675_2
       rect:
         serializedVersion: 2
         x: 1400
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e3eb03fcf4ac8648bae9a278a876f83
-      internalID: 2112722725
+      spriteID: 1cb1fc5cf823d3e4982a9e563b7b1265
+      internalID: -1311876860
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "sprite sheet \u0E15\u0E35\u0E4B\u0E2D\u0E34\u0E48\u0E21_3"
+      name: IMG_7675_3
       rect:
         serializedVersion: 2
         x: 2100
@@ -182,29 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fafcb42738a0e54288a06206c47cc5f
-      internalID: -1828658244
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "sprite sheet \u0E15\u0E35\u0E4B\u0E2D\u0E34\u0E48\u0E21_4"
-      rect:
-        serializedVersion: 2
-        x: 2800
-        y: 0
-        width: 700
-        height: 715
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fc44839ec77b9674d9516936ae32e055
-      internalID: -1241425284
+      spriteID: dcf1495a5b0ec5b4dbae5ce22e031a46
+      internalID: -233984321
       vertices: []
       indices: 
       edges: []
@@ -212,7 +191,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 47595bc93bc7e614eaff1e9bba2efa69
     internalID: 0
     vertices: []
     indices: 
@@ -220,11 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      "sprite sheet \u0E15\u0E35\u0E4B\u0E2D\u0E34\u0E48\u0E21_0": -533100186
-      "sprite sheet \u0E15\u0E35\u0E4B\u0E2D\u0E34\u0E48\u0E21_1": -1620536179
-      "sprite sheet \u0E15\u0E35\u0E4B\u0E2D\u0E34\u0E48\u0E21_2": 2112722725
-      "sprite sheet \u0E15\u0E35\u0E4B\u0E2D\u0E34\u0E48\u0E21_3": -1828658244
-      "sprite sheet \u0E15\u0E35\u0E4B\u0E2D\u0E34\u0E48\u0E21_4": -1241425284
+      IMG_7675_0: 31766372
+      IMG_7675_1: -1790895106
+      IMG_7675_2: -1311876860
+      IMG_7675_3: -233984321
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

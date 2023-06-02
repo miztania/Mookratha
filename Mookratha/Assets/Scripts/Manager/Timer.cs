@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour
     [Header("Component")]
     TextMeshProUGUI minuteText;
     TextMeshProUGUI secondText;
+    Animator animator;
 
     [Header("Timer Setting")]
     public float currentTime;
@@ -16,6 +17,8 @@ public class Timer : MonoBehaviour
 
     private void Start()
     {
+        animator = GameObject.Find("Clock").GetComponent<Animator>();
+        animator.enabled = false;
         minuteText = GameObject.Find("Minute").GetComponent<TextMeshProUGUI>();
         secondText = GameObject.Find("Second").GetComponent<TextMeshProUGUI>();
         currentTime = 180;
@@ -29,6 +32,10 @@ public class Timer : MonoBehaviour
             minuteText.text = ((int)currentTime / 60).ToString();
             secondText.text = returnSecond((int)currentTime);
         }
+    }
+    public void ClockShake()
+    {
+        animator.enabled = true;
     }
 
     private string returnSecond(int currentTime)
