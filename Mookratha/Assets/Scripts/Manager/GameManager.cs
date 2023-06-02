@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     {
         if (timer.currentTime <= 0 && !isEnd)//meaning timeup
         {
+            timer.ClockShake();
             isEnd = true;
             saveScore.player1Score = jarn1.currentPoint;
             saveScore.player2Score = jarn2.currentPoint;

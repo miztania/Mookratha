@@ -121,7 +121,9 @@ public class FoodController : MonoBehaviour
             startTime = Time.time;
             other.SendMessage("EatFood", foodPoint);
             other.SendMessage("EatFoodSetHealth", foodStage);
-            
+
+            if(cookLevel>= doneLevel&&cookLevel<100) other.SendMessage("EatAnim_Done");
+            else other.SendMessage("EatAnim_Rare_Burn");
 
             this.transform.parent= null;
         }

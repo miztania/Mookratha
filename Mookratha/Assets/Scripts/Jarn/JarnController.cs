@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Animations;
 
 public class JarnController : MonoBehaviour
 {
     public float MaxHealth = 100;
     public float currentHealth = 0;
     public GameObject PlayerGameObject;
+    public Animator animator;
    
 
     public Text pointText;
@@ -61,5 +63,27 @@ public class JarnController : MonoBehaviour
         currentHealth += foodHealth;
     }
 
+    public void EatAnim_Done()
+    {
+        animator.SetBool("Aroi", true);
+        Invoke("setBoolAroifalse", 1.5f);
+        
+    }
+
+    public void EatAnim_Rare_Burn()
+    {
+        animator.SetBool("MaiAroi", true);
+        Invoke("setBoolMaiAroifalse", 1.5f);
+    }
+
+    void setBoolAroifalse()
+    {
+        animator.SetBool("Aroi", false);
+    }
+
+    void setBoolMaiAroifalse()
+    {
+        animator.SetBool("MaiAroi", false);
+    }
 
 }
