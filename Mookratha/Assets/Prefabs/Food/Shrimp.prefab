@@ -107,9 +107,6 @@ MonoBehaviour:
   cookLevelMax: 100
   cookRate: 5
   doneLevel: 50
-  burnLevel: 0
-  burnLevelMax: 100
-  burnRate: 5
   RawPoint: -30
   DonePoint: 30
   BurnPoint: -30
@@ -119,6 +116,7 @@ MonoBehaviour:
   foodStage: 0
   foodPoint: 0
   inJarnBeforeDestroyTime: 5
+  DoneParticle: {fileID: 7022268795503775816, guid: 7377f38a94f13bd43924090d4a77f29e, type: 3}
   isInJarn: 0
 --- !u!54 &1531894975938031133
 Rigidbody:

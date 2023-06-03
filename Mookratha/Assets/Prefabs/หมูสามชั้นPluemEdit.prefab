@@ -311,6 +311,7 @@ MonoBehaviour:
   ringHealthBar: {fileID: 6690916466852958701}
   ringburnBar: {fileID: 6690916467878757426}
   ringLayout: {fileID: 6896437954361406129}
+  maxLevel: 95
 --- !u!1 &6690916466852958707
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,7 +533,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6690916467554488598
 RectTransform:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Animations;
+using System.Diagnostics.Contracts;
 
 public class JarnController : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class JarnController : MonoBehaviour
     public float currentPoint = 0;
 
     public HealthBar healthBar;
+
+    public GameObject foodParticle;
+
 
     private void Start()
     {
@@ -55,6 +59,7 @@ public class JarnController : MonoBehaviour
 
     public void EatFood(float foodPoint)
     {
+        Instantiate(foodParticle, this.transform);
         currentPoint += foodPoint;
     }
 

@@ -141,4 +141,5 @@ MonoBehaviour:
   foodStage: 0
   foodPoint: 0
   inJarnBeforeDestroyTime: 5
+  DoneParticle: {fileID: 7022268795503775816, guid: 7377f38a94f13bd43924090d4a77f29e, type: 3}
   isInJarn: 0

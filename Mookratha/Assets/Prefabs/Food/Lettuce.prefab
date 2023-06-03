@@ -128,6 +128,7 @@ MonoBehaviour:
   foodStage: 0
   foodPoint: 0
   inJarnBeforeDestroyTime: 5
+  DoneParticle: {fileID: 3548588485384254792, guid: 2f9e7dc163581394da1e00b561eed65d, type: 3}
   isInJarn: 0
 --- !u!65 &8097080854846474824
 BoxCollider:

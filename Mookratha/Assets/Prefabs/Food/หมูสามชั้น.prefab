@@ -133,10 +133,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 676b125934551334290fdd6556fdfe1f, type: 2}
   cookLevel: 0
   cookLevelMax: 100
-  cookRate: 12
-  burnLevel: 0
-  burnLevelMax: 100
-  burnRate: 12
+  cookRate: 2
+  doneLevel: 50
   RawPoint: -30
   DonePoint: 30
   BurnPoint: -30

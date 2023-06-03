@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     public Rigidbody RB { get; private set; }
     public Transform respawndPos;
     public GameObject HitBox;
+    public GameObject HitParticle;
 
     public bool isDashing { get; private set; }
     public bool isCanHold { get; private set; }
@@ -74,7 +75,7 @@ public class Player : MonoBehaviour
         isCanGetHit = true;
         isGetingHit = false;
 
-
+ 
 
 
 
@@ -164,6 +165,7 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "hitbox")
         {
             Debug.Log("HIT");
+            Instantiate(HitParticle,this.transform);
             SetIsGettingHit(true);
         }
 
@@ -177,6 +179,7 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "hitbox")
         {
             Debug.Log("Boom");
+            
             SetIsGettingHit(true);
         }
 
@@ -288,4 +291,6 @@ public class Player : MonoBehaviour
     {
         GetHitState.SetIsAbilityDone(true);
     }
+
+  
 }

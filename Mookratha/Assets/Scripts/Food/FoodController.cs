@@ -32,8 +32,8 @@ public class FoodController : MonoBehaviour
 
     public float inJarnBeforeDestroyTime = 5f;
 
-
-
+ 
+    
   
 
     public bool isInJarn;
@@ -117,6 +117,7 @@ public class FoodController : MonoBehaviour
     {
         if(other.gameObject.tag == "jarn")
         {
+
             isInJarn= true;
             startTime = Time.time;
             other.SendMessage("EatFood", foodPoint);
