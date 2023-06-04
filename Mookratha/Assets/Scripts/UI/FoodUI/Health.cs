@@ -32,7 +32,7 @@ public class Health : MonoBehaviour
         if (isFat)
         {
             CookToDone(foodBoomController.cookLevel, ref doneLevel);
-            DoneToBurn(foodBoomController.cookLevel, ref burnLevel);
+            DoneToBurnFat(foodBoomController.cookLevel, ref burnLevel);
         }
         else
         {
@@ -68,5 +68,10 @@ public class Health : MonoBehaviour
     public void DoneToBurn(float cal, ref float valueForEqual)
     {
         if (cal > 50 && valueForEqual < 100) valueForEqual = (cal - 50) * 2;
+    }
+
+    public void DoneToBurnFat(float cal, ref float valueForEqual)
+    {
+        if (cal > 30 && valueForEqual < 60) valueForEqual = (cal - 30) * 2;
     }
 }
