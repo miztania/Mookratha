@@ -54,6 +54,7 @@ MonoBehaviour:
   ringburnBar: {fileID: 8307165833821516774}
   ringLayout: {fileID: 8081431922006508901}
   maxLevel: 95
+  isFat: 0
 --- !u!33 &986205146942705497
 MeshFilter:
   m_ObjectHideFlags: 0
