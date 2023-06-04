@@ -13,16 +13,32 @@ public class Health : MonoBehaviour
 
     float lerpSpeed;
     FoodController foodController;
+    FoodBoomController foodBoomController;
+    public bool isFat = false;
 
     private void Start()
     {
-        foodController = GetComponent<FoodController>();
+        if (isFat)
+        {
+            foodBoomController = GetComponent<FoodBoomController>();
+        }
+        else foodController = GetComponent<FoodController>();
+
+
     }
 
     private void Update()
     {
-        CookToDone(foodController.cookLevel,ref doneLevel);
-        DoneToBurn(foodController.cookLevel, ref burnLevel);
+        if (isFat)
+        {
+            CookToDone(foodBoomController.cookLevel, ref doneLevel);
+            DoneToBurn(foodBoomController.cookLevel, ref burnLevel);
+        }
+        else
+        {
+            CookToDone(foodController.cookLevel, ref doneLevel);
+            DoneToBurn(foodController.cookLevel, ref burnLevel);
+        }       
 
         ColorChanger();
         lerpSpeed = 3f * Time.deltaTime;

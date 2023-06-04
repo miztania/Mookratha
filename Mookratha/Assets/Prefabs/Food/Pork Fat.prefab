@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 700904008978353425}
   - component: {fileID: 700904008978353430}
   - component: {fileID: 700904008978353517}
+  - component: {fileID: 5970397964838580747}
   m_Layer: 7
   m_Name: Pork Fat
   m_TagString: food
@@ -150,6 +151,23 @@ MonoBehaviour:
   foodPoint: 0
   inJarnBeforeDestroyTime: 0
   isInJarn: 0
+--- !u!114 &5970397964838580747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395038766481242043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6b9332247fc554aa6e60c870c822b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ringHealthBar: {fileID: 2640219340480970471}
+  ringburnBar: {fileID: 2640219339354499896}
+  ringLayout: {fileID: 2867677319778360763}
+  maxLevel: 95
+  isFat: 1
 --- !u!1001 &700904009532027221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -493,8 +511,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90053df605f9fda458bf4d69e5654c28, type: 3}
+--- !u!114 &2640219339354499896 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4400431977406630608, guid: 90053df605f9fda458bf4d69e5654c28, type: 3}
+  m_PrefabInstance: {fileID: 1851692005759967720}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &2640219339508907548 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4400431977686867956, guid: 90053df605f9fda458bf4d69e5654c28, type: 3}
   m_PrefabInstance: {fileID: 1851692005759967720}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2640219340480970471 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4400431978398818063, guid: 90053df605f9fda458bf4d69e5654c28, type: 3}
+  m_PrefabInstance: {fileID: 1851692005759967720}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2867677319778360763 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4503178813640129619, guid: 90053df605f9fda458bf4d69e5654c28, type: 3}
+  m_PrefabInstance: {fileID: 1851692005759967720}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
