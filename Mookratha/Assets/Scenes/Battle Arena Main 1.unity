@@ -4162,7 +4162,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodObject:
-  - {fileID: 7393436138137003323, guid: 508d6b7a99fda0648bdd035fc8158897, type: 3}
   - {fileID: 1531894975938031126, guid: 85ba50ae32306a3468fe165893f3a9a7, type: 3}
   - {fileID: 395038766481242043, guid: 71698e884577f104d844142c4b6ad45f, type: 3}
   - {fileID: 1153001974895973564, guid: cba62fbb3f76c5c46b269e48e6890761, type: 3}
@@ -8618,7 +8617,7 @@ PrefabInstance:
       objectReference: {fileID: 84818387}
     - target: {fileID: 4368996145665183517, guid: ab43d0be89f002047a67b67bf6bf87f0, type: 3}
       propertyPath: m_DefaultControlScheme
-      value: Keyboard
+      value: Joystick
       objectReference: {fileID: 0}
     - target: {fileID: 4370585691095720667, guid: ab43d0be89f002047a67b67bf6bf87f0, type: 3}
       propertyPath: m_Name
