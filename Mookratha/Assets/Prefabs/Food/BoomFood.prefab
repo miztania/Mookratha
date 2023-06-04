@@ -246,7 +246,7 @@ MonoBehaviour:
   boomTime: 0
   foodStage: 0
   foodPoint: 0
-  inJarnBeforeDestroyTime: 5
+  inJarnBeforeDestroyTime: 0
   isInJarn: 0
 --- !u!65 &8129135438029427886
 BoxCollider:

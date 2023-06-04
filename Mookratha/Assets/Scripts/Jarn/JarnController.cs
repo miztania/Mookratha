@@ -78,7 +78,7 @@ public class JarnController : MonoBehaviour
     public void EatAnim_Rare_Burn()
     {
         animator.SetBool("MaiAroi", true);
-        Invoke("setBoolMaiAroifalse", 1.5f);
+        Invoke("setBoolMaiAroifalse", 2.25f);
     }
 
     void setBoolAroifalse()

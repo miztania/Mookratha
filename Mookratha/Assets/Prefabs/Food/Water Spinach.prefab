@@ -128,16 +128,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meterial: []
-  cookLevel: 0
+  cookLevel: 52
   cookLevelMax: 100
-  cookRate: 0.2
+  cookRate: 0
   doneLevel: 50
-  RawPoint: -30
-  DonePoint: 30
-  BurnPoint: -30
-  RawSetHealth: -10
-  DoneSetHealth: 10
-  BurnSetHealth: -10
+  RawPoint: 10
+  DonePoint: 10
+  BurnPoint: 10
+  RawSetHealth: 20
+  DoneSetHealth: 20
+  BurnSetHealth: 20
   foodStage: 0
   foodPoint: 0
   inJarnBeforeDestroyTime: 5

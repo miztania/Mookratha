@@ -147,7 +147,7 @@ MonoBehaviour:
   boomTime: 0
   foodStage: 0
   foodPoint: 0
-  inJarnBeforeDestroyTime: 5
+  inJarnBeforeDestroyTime: 0
   isInJarn: 0
 --- !u!1001 &700904009532027221
 PrefabInstance:
