@@ -47,6 +47,11 @@ public class JarnController : MonoBehaviour
         {
             Destroy(PlayerGameObject);
         }
+
+        if(currentPoint < 0)
+        {
+            currentPoint= 0;
+        }
     }
 
 
