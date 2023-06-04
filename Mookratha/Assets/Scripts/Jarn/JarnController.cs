@@ -26,6 +26,8 @@ public class JarnController : MonoBehaviour
 
     private void Start()
     {
+        if (aroiDelay == 0) aroiDelay = 2f;
+        if (maiAroiDelay == 0) maiAroiDelay = 2f;
         currentHealth = MaxHealth;
         healthBar.SetMaxHealth((int)MaxHealth);
     }
@@ -80,11 +82,8 @@ public class JarnController : MonoBehaviour
     public void EatAnim_Rare_Burn()
     {
         animator.SetBool("MaiAroi", true);
-<<<<<<< Updated upstream
-        Invoke("setBoolMaiAroifalse", 2.25f);
-=======
         Invoke("setBoolMaiAroifalse", maiAroiDelay);
->>>>>>> Stashed changes
+
     }
 
     void setBoolAroifalse()
