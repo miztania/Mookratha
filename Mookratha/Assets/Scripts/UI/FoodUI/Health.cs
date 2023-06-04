@@ -20,6 +20,7 @@ public class Health : MonoBehaviour
     {
         if (isFat)
         {
+            maxLevel = 60;
             foodBoomController = GetComponent<FoodBoomController>();
         }
         else foodController = GetComponent<FoodController>();
