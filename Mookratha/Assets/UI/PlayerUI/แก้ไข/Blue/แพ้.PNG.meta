@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 72a834e668725ec42b72d4bc4b6d8d4e
+guid: 8a8de1bad0e96594da39440d63f1b5a1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -103,106 +103,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: IMG_7674_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 700
-        height: 930
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fc693f42a03e9dc4bb8600e9d5a118a8
-      internalID: -571953237
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_7674_1
-      rect:
-        serializedVersion: 2
-        x: 700
-        y: 0
-        width: 700
-        height: 930
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2af637857ec681b49ba099e0113fc209
-      internalID: 2075185425
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_7674_2
-      rect:
-        serializedVersion: 2
-        x: 1400
-        y: 0
-        width: 700
-        height: 930
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f54d55b09a1099d4fa59524f4254aa09
-      internalID: -1221175843
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_7674_3
-      rect:
-        serializedVersion: 2
-        x: 2100
-        y: 0
-        width: 700
-        height: 930
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 578a20eba8c550946abb33155ea7e0c9
-      internalID: 613046432
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 87d9183f5615bd74981c601daca1c3a4
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      IMG_7674_0: -571953237
-      IMG_7674_1: 2075185425
-      IMG_7674_2: -1221175843
-      IMG_7674_3: 613046432
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
