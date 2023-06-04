@@ -12,6 +12,8 @@ public class JarnController : MonoBehaviour
     public float currentHealth = 0;
     public GameObject PlayerGameObject;
     public Animator animator;
+    public float aroiDelay;
+    public float maiAroiDelay;
    
 
     public Text pointText;
@@ -24,6 +26,8 @@ public class JarnController : MonoBehaviour
 
     private void Start()
     {
+        if (aroiDelay == 0) aroiDelay = 2f;
+        if (maiAroiDelay == 0) maiAroiDelay = 2f;
         currentHealth = MaxHealth;
         healthBar.SetMaxHealth((int)MaxHealth);
     }
@@ -71,14 +75,15 @@ public class JarnController : MonoBehaviour
     public void EatAnim_Done()
     {
         animator.SetBool("Aroi", true);
-        Invoke("setBoolAroifalse", 1.5f);
+        Invoke("setBoolAroifalse", aroiDelay);
         
     }
 
     public void EatAnim_Rare_Burn()
     {
         animator.SetBool("MaiAroi", true);
-        Invoke("setBoolMaiAroifalse", 2.25f);
+        Invoke("setBoolMaiAroifalse", maiAroiDelay);
+
     }
 
     void setBoolAroifalse()
