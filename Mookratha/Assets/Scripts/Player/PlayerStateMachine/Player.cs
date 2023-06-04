@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using static UnityEditor.Progress;
 
 public class Player : MonoBehaviour
 {
@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public PlayerHoldStillState HoldStillState { get; private set; }
     public PlayerThrowState ThrowState { get; private set; }
     public PlayerGetHitState GetHitState { get; private set; }
+
 
     public Animator Anim { get; private set; }
     public PlayerInputHandler InputHandler { get; private set; }
