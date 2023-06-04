@@ -2858,6 +2858,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u0E2B\u0E21\u0E39\u0E2A\u0E32\u0E21\u0E0A\u0E31\u0E49\u0E19"
       objectReference: {fileID: 0}
+    - target: {fileID: 3552143163027216966, guid: 5fdaf3a90d5f5a941b4361c3ec133b79, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4179463386450460924, guid: 5fdaf3a90d5f5a941b4361c3ec133b79, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -5558,6 +5562,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shrimp
       objectReference: {fileID: 0}
+    - target: {fileID: 1531894975938031126, guid: 85ba50ae32306a3468fe165893f3a9a7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1531894975938031131, guid: 85ba50ae32306a3468fe165893f3a9a7, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -6507,6 +6515,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pork Fat
       objectReference: {fileID: 0}
+    - target: {fileID: 395038766481242043, guid: 71698e884577f104d844142c4b6ad45f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 634570175776527623, guid: 71698e884577f104d844142c4b6ad45f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -6579,6 +6591,10 @@ PrefabInstance:
     - target: {fileID: 1153001974895973564, guid: cba62fbb3f76c5c46b269e48e6890761, type: 3}
       propertyPath: m_Name
       value: Liver
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153001974895973564, guid: cba62fbb3f76c5c46b269e48e6890761, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1966834451947179526, guid: cba62fbb3f76c5c46b269e48e6890761, type: 3}
       propertyPath: m_RootOrder
@@ -6684,6 +6700,10 @@ PrefabInstance:
     - target: {fileID: 3407156423273486802, guid: 6d8943117e2db40428edd7b469ab8c02, type: 3}
       propertyPath: m_Name
       value: Carrot
+      objectReference: {fileID: 0}
+    - target: {fileID: 3407156423273486802, guid: 6d8943117e2db40428edd7b469ab8c02, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d8943117e2db40428edd7b469ab8c02, type: 3}
@@ -7310,6 +7330,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lettuce
       objectReference: {fileID: 0}
+    - target: {fileID: 8097080854846474818, guid: cf4f8c1fdc71d944daec43ecd6ed006c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8097080854846474824, guid: cf4f8c1fdc71d944daec43ecd6ed006c, type: 3}
       propertyPath: m_Size.y
       value: 0.055863213
@@ -7389,7 +7413,11 @@ PrefabInstance:
       objectReference: {fileID: 84818387}
     - target: {fileID: 4368996145665183517, guid: ab43d0be89f002047a67b67bf6bf87f0, type: 3}
       propertyPath: m_DefaultControlScheme
-      value: Keyboard
+      value: Gamepadxbox
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368996145665183517, guid: ab43d0be89f002047a67b67bf6bf87f0, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4370585691095720667, guid: ab43d0be89f002047a67b67bf6bf87f0, type: 3}
       propertyPath: m_Name
